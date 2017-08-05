@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UserPlaceholder</string>
+    <string name="no_results_in_request">Нет результатов по данному запросу</string>
+
+</resources>
