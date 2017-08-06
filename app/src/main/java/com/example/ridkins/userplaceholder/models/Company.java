@@ -2,10 +2,12 @@ package com.example.ridkins.userplaceholder.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by Rud on 8/5/17.
  */
-public class Company {
+public class Company implements Serializable {
     @SerializedName("bs")
     private String bs;
     @SerializedName("catchPhrase")
@@ -18,7 +20,7 @@ public class Company {
     }
 
     public String getBs() {
-        return bs;
+        return checkValue(bs);
     }
 
     public void setCatchPhrase(String catchPhrase) {
@@ -34,6 +36,15 @@ public class Company {
     }
 
     public String getName() {
-        return name;
+        return checkValue(name);
+    }
+
+    private String checkValue(String value){
+
+        if(value == null)
+            return "";
+        return value;
+
+
     }
 }

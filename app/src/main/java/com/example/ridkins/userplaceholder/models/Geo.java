@@ -2,10 +2,12 @@ package com.example.ridkins.userplaceholder.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by Rud on 8/5/17.
  */
-public class Geo {
+public class Geo implements Serializable {
     @SerializedName("lng")
     private Double lng;
     @SerializedName("lat")

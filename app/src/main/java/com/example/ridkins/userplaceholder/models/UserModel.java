@@ -2,10 +2,12 @@ package com.example.ridkins.userplaceholder.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by Rud on 8/5/17.
  */
-public class UserModel {
+public class UserModel implements Serializable {
     @SerializedName("website")
     private String website;
     @SerializedName("address")
@@ -28,7 +30,7 @@ public class UserModel {
     }
 
     public String getWebsite() {
-        return website;
+        return checkValue(website);
     }
 
     public void setAddress(Address address) {
@@ -44,7 +46,7 @@ public class UserModel {
     }
 
     public String getPhone() {
-        return phone;
+        return checkValue(phone);
     }
 
     public void setName(String name) {
@@ -52,7 +54,7 @@ public class UserModel {
     }
 
     public String getName() {
-        return name;
+        return checkValue(name);
     }
 
     public void setCompany(Company company) {
@@ -76,7 +78,7 @@ public class UserModel {
     }
 
     public String getEmail() {
-        return email;
+        return checkValue(email);
     }
 
     public void setUsername(String username) {
@@ -84,6 +86,14 @@ public class UserModel {
     }
 
     public String getUsername() {
-        return username;
+        return checkValue(username);
+    }
+    private String checkValue(String value){
+
+        if(value == null)
+            return "";
+        return value;
+
+
     }
 }
