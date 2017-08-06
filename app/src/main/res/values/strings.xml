@@ -1,4 +1,7 @@
 <resources>
+
+    <string name="facebook_app_id">163402954219039</string>
+    <string name="fb_login_protocol_scheme">fb163402954219039</string>
     <string name="app_name">UserPlaceholder</string>
     <string name="no_results_in_request">Нет результатов по данному запросу</string>
 

@@ -66,8 +66,8 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.TradersViewH
         public TradersViewHolder(View itemView) {
             super(itemView);
             tvUserName = (TextView) itemView.findViewById(R.id.tv_user_name);
-            tvUsersWebSite = (TextView) itemView.findViewById(R.id.tv_company_name);
-            tvCompanyName = (TextView) itemView.findViewById(R.id.tv_web_site);
+            tvUsersWebSite = (TextView) itemView.findViewById(R.id.tv_web_site);
+            tvCompanyName = (TextView) itemView.findViewById(R.id.tv_company_name);
 
 
         }
