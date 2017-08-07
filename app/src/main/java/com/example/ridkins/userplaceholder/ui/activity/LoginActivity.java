@@ -63,13 +63,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     public void onCompleted(JSONObject object, GraphResponse response) {
                                         Profile profile = Profile.getCurrentProfile();
                                         try {
+                                            Settings.setUserName(object.optString("name"), mSharedPreferences);
+                                            Settings.setUserEMail(object.optString("email"), mSharedPreferences);
+                                            Settings.setUserPhotoUrl("https://graph.facebook.com/" + object.optString("id") + "/picture?type=large", mSharedPreferences);
+
                                             Log.e("Email = ", " " + object.getString("email"));
                                         } catch (JSONException e) {
                                             e.printStackTrace();
                                         }
-                                        Settings.setUserName(profile.getFirstName() + " " + profile.getLastName(), mSharedPreferences);
-                                        Settings.setUserID(profile.getId(), mSharedPreferences);
-                                        Settings.setUserPhotoUrl(profile.getProfilePictureUri(300, 300).toString(), mSharedPreferences);
+                                        //Settings.setUserName(profile.getFirstName() + " " + profile.getLastName(), mSharedPreferences);
+                                       // Settings.setUserID(profile.getId(), mSharedPreferences);
+                                       // Settings.setUserPhotoUrl(profile.getProfilePictureUri(300, 300).toString(), mSharedPreferences);
                                         Settings.setUserLoggedIn(true, mSharedPreferences);
                                         Intent mIntent = new Intent(LoginActivity.this, LoggedActivity.class);
                                         startActivity(mIntent);
